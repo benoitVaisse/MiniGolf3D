@@ -18,6 +18,8 @@ public class BallManager : MonoBehaviour
 
     public void Respawn()
     {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         transform.position = _respawnPosition;
     }
 

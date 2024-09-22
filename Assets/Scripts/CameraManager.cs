@@ -16,14 +16,11 @@ public class CameraManager : MonoBehaviour
     private float RotationX;
     private float RotationY;
     private Quaternion Rotation;
-
-    private Vector3 ddd;
     void Start()
     {
         Ball = GameObject.Find("Ball").gameObject;
         RotationX = transform.eulerAngles.x;
         RotationY = transform.eulerAngles.y;
-        ddd = Ball.transform.position - transform.position;
     }
 
     // Update is called once per frame
@@ -48,5 +45,8 @@ public class CameraManager : MonoBehaviour
             Vector3 position = Rotation * new Vector3(0, Ball.transform.position.y + Recul, -Offset) + Ball.transform.position;
             transform.position = position;
         }
+
+        if(transform.position.y < 0.0f)
+            transform.position =  new Vector3(transform.position.x, 0.0f, transform.position.z);
     }
 }
