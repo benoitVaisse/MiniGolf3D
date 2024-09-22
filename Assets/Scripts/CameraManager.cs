@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEngine.GraphicsBuffer;
 
-public class Camera : MonoBehaviour
+public class CameraManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
@@ -16,7 +16,6 @@ public class Camera : MonoBehaviour
     private float RotationX;
     private float RotationY;
     private Quaternion Rotation;
-    private Touch Touch;
 
     private Vector3 ddd;
     void Start()
@@ -43,7 +42,7 @@ public class Camera : MonoBehaviour
 
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            Rotation = Quaternion.Euler(RotationX, RotationY, 0);
+            Rotation = Quaternion.Euler(RotationX, RotationY * 4, 0);
             transform.rotation = Rotation;
             //Vector3 position = /*Rotation **/ Ball.transform.position - ddd;
             Vector3 position = Rotation * new Vector3(0, Ball.transform.position.y + Recul, -Offset) + Ball.transform.position;
