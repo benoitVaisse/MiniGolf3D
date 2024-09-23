@@ -79,7 +79,7 @@ public sealed class LevelManager : MonoBehaviour
 
     private void ShowScore(float score)
     {
-        if (_canvas.transform.Find("Scoring/ScoreText") is Transform transform && transform.GetComponent<TMP_Text>() is TMP_Text text)
+        if (_canvas != null && _canvas.transform.Find("Scoring/ScoreText") is Transform transform && transform.GetComponent<TMP_Text>() is TMP_Text text)
         {
             text.SetText(SCORE_TEXT_BASE.Replace("{score}", score.ToString()));
         }

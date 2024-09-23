@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1026050542765335048}
   - component: {fileID: 2570808077385862494}
   - component: {fileID: 5665890746084293514}
+  - component: {fileID: 4370377373634249083}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -63,3 +64,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bc0d8ccb798874e9cf006d55bebac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
+  NbrShoot: 0
+  _panelFinishLevel: {fileID: 0}
+  _canvas: {fileID: 0}
+--- !u!114 &4370377373634249083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428071005040100131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4ccefa14ac94f459fbdf32555e3cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundSystemRessource: {fileID: 5666032119968497133, guid: c871517d23ccb3c4689ea724688dca76,
+    type: 3}
