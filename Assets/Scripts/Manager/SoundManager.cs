@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public sealed class SoundManager : MonoBehaviour
@@ -14,8 +15,17 @@ public sealed class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        _instance = this;
+        if(_instance != null && _instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            _instance = this;
+        }
         _gameSound = transform.Find("GameSound").GetComponent<AudioSource>();
+        GameObject[] gos = FindObjectsByType<GameObject>(FindObjectsSortMode.InstanceID).Where(go => go.name == gameObject.name).ToArray();
+        if (gos.Length > 1) { Destroy(gos[1]); }
     }
 
     public void PlayGameSound(int index)

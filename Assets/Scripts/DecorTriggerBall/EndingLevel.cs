@@ -5,8 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class EndingLevel : MonoBehaviour, ITriggerEnterBall
 {
+    [SerializeField]
+    private GameObject particule;
     public void ActionTriggerEnteredBall(GameObject ball)
     {
-        LevelManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(FinishLevel());
+    }
+
+    private IEnumerator FinishLevel()
+    {
+        particule.GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(1);
+        LevelManager.Instance.ShowPanelEndingLevel();
     }
 }

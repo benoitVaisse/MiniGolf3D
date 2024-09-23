@@ -83,6 +83,7 @@ public class ShootScript : MonoBehaviour
         float shootPowerFinal = _rectTransformBar.localScale.x * _power;
         _ball.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * shootPowerFinal);
         SetForceBarToOrigin();
+        LevelManager.Instance.NbrShoot++;
     }
 
     private void SetForceBarToOrigin()
