@@ -24,8 +24,8 @@ public sealed class SoundManager : MonoBehaviour
             _instance = this;
         }
         _gameSound = transform.Find("GameSound").GetComponent<AudioSource>();
-        GameObject[] gos = FindObjectsByType<GameObject>(FindObjectsSortMode.InstanceID).Where(go => go.name == gameObject.name).ToArray();
-        if (gos.Length > 1) { Destroy(gos[1]); }
+        GameObject[] gos = GameObject.FindGameObjectsWithTag("SoundManager").ToArray();
+        if (gos.Length > 1) { Destroy(gameObject); }
     }
 
     public void PlayGameSound(int index)
