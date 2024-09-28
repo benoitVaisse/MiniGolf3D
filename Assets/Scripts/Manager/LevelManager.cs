@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,7 +11,6 @@ public sealed class LevelManager : MonoBehaviour
 
     private const string SCORE_TEXT_BASE = "Score : {score}";
 
-    private bool _pause = false;
 
     [Header("scoring")]
     public float Score = 0;
@@ -39,13 +39,8 @@ public sealed class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            _pause = !_pause;
-            SoundManager.Instance.PlayGameSound(GameSountConst.PAUSE);
-            Time.timeScale = _pause? 1.0f : 0.0f;
-        }
     }
+
     public void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
