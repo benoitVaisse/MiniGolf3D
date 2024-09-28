@@ -55,6 +55,11 @@ public sealed class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     #region Scoring
     private void FinishLevel()
     {

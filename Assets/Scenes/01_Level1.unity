@@ -767,6 +767,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bc0d8ccb798874e9cf006d55bebac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &342772705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6273465672585643256, guid: e4e7bd49c84efd14aabb9b0d0c4e916f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4002516447071553408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32294fc62c076e841941f30f489f996f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &452242442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2184625294401238473, guid: 9b63c341be39aa44f968ddb01b02b0cb,
@@ -1983,6 +1995,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 342772701}
+    - target: {fileID: 5744418451849922227, guid: 4fa0c482adcedc34f9b108ce4af19202,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 342772705}
+    - target: {fileID: 7079913440626980930, guid: 4fa0c482adcedc34f9b108ce4af19202,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 342772701}
     - target: {fileID: 7286770222243685280, guid: 4fa0c482adcedc34f9b108ce4af19202,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2084,6 +2106,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7598730738176406800, guid: 4fa0c482adcedc34f9b108ce4af19202,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 342772701}
+    - target: {fileID: 8142378739217278196, guid: 4fa0c482adcedc34f9b108ce4af19202,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
