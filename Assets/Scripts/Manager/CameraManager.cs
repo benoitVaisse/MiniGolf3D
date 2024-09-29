@@ -30,7 +30,7 @@ public class CameraManager : MonoBehaviour
 #if UNITY_ANDROID || UNITY_IPHONE
          if(Input.touches.Length == 1)
          {
-            RotationY += Input.GetTouch(0).deltaPosition.x *0.1f;
+            _rotationY += Input.GetTouch(0).deltaPosition.x *0.1f;
          }
 #endif
 
