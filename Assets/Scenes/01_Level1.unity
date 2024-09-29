@@ -1995,6 +1995,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 342772701}
+    - target: {fileID: 5165900743108209412, guid: 4fa0c482adcedc34f9b108ce4af19202,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5744418451849922227, guid: 4fa0c482adcedc34f9b108ce4af19202,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2005,6 +2010,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 342772701}
+    - target: {fileID: 7222139427015707884, guid: 4fa0c482adcedc34f9b108ce4af19202,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7286770222243685280, guid: 4fa0c482adcedc34f9b108ce4af19202,
         type: 3}
       propertyPath: m_Pivot.x

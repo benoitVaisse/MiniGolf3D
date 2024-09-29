@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public sealed class SoundManager : MonoBehaviour
 {
@@ -24,8 +27,14 @@ public sealed class SoundManager : MonoBehaviour
             _instance = this;
         }
         _gameSound = transform.Find("GameSound").GetComponent<AudioSource>();
+
         GameObject[] gos = GameObject.FindGameObjectsWithTag("SoundManager").ToArray();
         if (gos.Length > 1) { Destroy(gameObject); }
+    }
+
+    private void Start()
+    {
+
     }
 
     public void PlayGameSound(int index)
@@ -33,7 +42,7 @@ public sealed class SoundManager : MonoBehaviour
         _gameSound.PlayOneShot(_audios[index]);
     }
 
-
+    
 }
 
 public class GameSountConst

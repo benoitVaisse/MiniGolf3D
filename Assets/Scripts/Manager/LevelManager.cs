@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -8,6 +9,8 @@ public sealed class LevelManager : MonoBehaviour
 {
     private static LevelManager _instance { get; set; }
     public static LevelManager Instance { get { return _instance;} }
+
+    public const string LAST_LEVEL_UNLOCK_KEY = "LastLevelUnlock";
 
     private const string SCORE_TEXT_BASE = "Score : {score}";
 
@@ -27,6 +30,7 @@ public sealed class LevelManager : MonoBehaviour
     }
     private void Start()
     {
+        Time.timeScale = 1.0f;
         _panelFinishLevel = _panelFinishLevel == null ? GameObject.Find("FinishLevelPanel") : _panelFinishLevel;
         _canvas = _canvas == null ? GameObject.Find("Canvas") : _canvas;
         if(_panelFinishLevel != null)
@@ -35,12 +39,13 @@ public sealed class LevelManager : MonoBehaviour
         }
 
         ShowScore(Score);
+        InitializeLevelChoice();
     }
 
     private void Update()
     {
     }
-
+    #region Scene
     public void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
@@ -52,13 +57,46 @@ public sealed class LevelManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        int levelUnlocked = SceneManager.GetActiveScene().buildIndex + 1;
+        SetLastLevelUnlock(levelUnlocked);
+        SceneManager.LoadScene(levelUnlocked);
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
+
+    public void NewGame()
+    {
+        PlayerPrefs.DeleteKey(LAST_LEVEL_UNLOCK_KEY);
+        LoadScene(PlayerPrefs.GetInt(LAST_LEVEL_UNLOCK_KEY, 1));
+    }
+
+    public void ContinueGame()
+    {
+        LoadScene(PlayerPrefs.GetInt(LAST_LEVEL_UNLOCK_KEY, 1));
+    }
+
+    public void SetLastLevelUnlock(int levelUnlocked)
+    {
+        PlayerPrefs.SetInt(LAST_LEVEL_UNLOCK_KEY, levelUnlocked);
+    }
+
+    private void InitializeLevelChoice()
+    {
+        int lastLevelUnlocked = PlayerPrefs.GetInt(LAST_LEVEL_UNLOCK_KEY, 1);
+        GameObject allLevelParent = GameObject.Find("allLevel");
+        if (allLevelParent != null)
+        {
+            foreach (Transform go in allLevelParent.transform)
+            {
+                go.GetComponent<Button>().interactable = int.Parse(go.name) <= lastLevelUnlocked;
+            }
+        }
+    }
+
+    #endregion Scene
 
     #region Scoring
     private void FinishLevel()

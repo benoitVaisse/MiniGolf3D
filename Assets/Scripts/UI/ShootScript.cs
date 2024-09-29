@@ -27,8 +27,9 @@ public class ShootScript : MonoBehaviour
         SetForceBarToOrigin();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
+        //Debug.Log(_ball.GetComponent<Rigidbody>().velocity.magnitude);
 #if UNITY_EDITOR || UNITY_STANDALONE
         if (Input.GetMouseButtonDown(0)) { Handle(); }
 #endif

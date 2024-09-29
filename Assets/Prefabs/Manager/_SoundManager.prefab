@@ -174,7 +174,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 9fe0855ea8e026947ba2151994d61c53, type: 3}
   m_Resource: {fileID: 8300000, guid: 9fe0855ea8e026947ba2151994d61c53, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.303
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -319,4 +319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audios:
   - {fileID: 8300000, guid: fd2ad79b72a327948953547d39c65adc, type: 3}
-  _gameSound: {fileID: 0}
+  _gameSound: {fileID: 7535443936650798808}
+  _backgroundSound: {fileID: 2949864097461829361}
+  _panelSoundOption: {fileID: 0}

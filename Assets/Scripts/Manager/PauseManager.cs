@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
@@ -19,7 +21,7 @@ public class PauseManager : MonoBehaviour
     {
         _pauseBlock = _pauseBlock == null ? GameObject.Find("Canvas/PauseBlock") : _pauseBlock;
         if (_pauseBlock == null)
-            throw new Exception("Pas de panel de pause");
+            throw new Exception($"Pas de panel de pause pour la scene {SceneManager.GetActiveScene().buildIndex}" );
 
         _pause = false;
         _pauseBlock.transform.Find("PauseButton").GetComponent<Image>().sprite = GetPauseSpriteButton(_pause);
